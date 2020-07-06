@@ -75,15 +75,6 @@ public class Employee implements Serializable {
 		this.email = email;
 	}
 
-	@Column(name = "password", nullable = false)
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	@Column(name = "cpf", nullable = false)
 	public String getCpf() {
 		return cpf;
@@ -163,6 +154,15 @@ public class Employee implements Serializable {
 		this.updateDate = updateDate;
 	}
 
+	@Column(name = "password", nullable = false)
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	public Company getCompany() {
 		return company;
