@@ -4,8 +4,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+@SpringBootTest
 public class PasswordUtilsTest {
 	
 	private static final String PASSWORD = "123456";

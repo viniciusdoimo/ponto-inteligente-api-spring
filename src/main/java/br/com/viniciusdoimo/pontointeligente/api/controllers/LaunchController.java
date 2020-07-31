@@ -29,9 +29,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kazale.pontointeligente.api.dtos.LancamentoDto;
-import com.kazale.pontointeligente.api.entities.Lancamento;
-
 import br.com.viniciusdoimo.pontointeligente.api.dtos.LaunchDto;
 import br.com.viniciusdoimo.pontointeligente.api.entities.Employee;
 import br.com.viniciusdoimo.pontointeligente.api.entities.Launch;
@@ -75,11 +72,9 @@ public class LaunchController {
 		log.info("Buscando lançamentos por ID do funcionário: {}, página: {}", employeeId, page);
 		Response<Page<LaunchDto>> response = new Response<Page<LaunchDto>>();
 
-		PageRequest pageRequest = new PageRequest(page, this.qtdPerPagina, Direction.valueOf(dir), ord);
+		PageRequest pageRequest = PageRequest.of(0, 10);
 		Page<Launch> launch = this.launchService.searchByEmployeeId(employeeId, pageRequest);
 		Page<LaunchDto> launchDto = launch.map(launchs -> this.converterLaunchDto((Launch) launch));
-		
-//		PageRequest pageRequest1 = new PageRequest(pag, this.qtdPorPagina, Direction.valueOf(dir), ord);
 
 		response.setData(launchDto);
 		return ResponseEntity.ok(response);

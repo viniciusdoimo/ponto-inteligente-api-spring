@@ -28,14 +28,14 @@ import br.com.viniciusdoimo.pontointeligente.api.utils.PasswordUtils;
 @RestController
 @RequestMapping("/api/funcionarios")
 @CrossOrigin(origins = "*")
-public class FuncionarioController {
+public class EmployeeController {
 
-	private static final Logger log = LoggerFactory.getLogger(FuncionarioController.class);
+	private static final Logger log = LoggerFactory.getLogger(EmployeeController.class);
 
 	@Autowired
 	private EmployeeService employeeService;
 
-	public FuncionarioController() {
+	public EmployeeController() {
 	}
 
 	/**

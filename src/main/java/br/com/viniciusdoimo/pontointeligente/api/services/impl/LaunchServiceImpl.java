@@ -28,13 +28,13 @@ public class LaunchServiceImpl implements LaunchService {
 		return this.launchRepository.findByEmployeeId(employeeId, pageRequest);
 	}
 	
-	//@Cacheable("launchById")
+	@Cacheable("launchById")
 	public Optional<Launch> searchById(Long id) {
 		log.info("Buscando um lançamento pelo ID {}", id);
 		return this.launchRepository.findById(id);
 	}
 	
-	//@CachePut("launchById")
+	@CachePut("launchById")
 	public Launch persist(Launch launch) {
 		log.info("Persistindo o lançamento: {}", launch);
 		return this.launchRepository.save(launch);

@@ -1,4 +1,4 @@
-package br.com.viniciusdoimo.pontointeligente;
+package br.com.viniciusdoimo.pontointeligente.api;
 
 
 import org.junit.jupiter.api.Test;
